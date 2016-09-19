@@ -1,7 +1,6 @@
 package care.automation;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -62,40 +61,31 @@ public class BaseTest {
 		this.initializeDriver(context, m, localFlag, mobileFlag);
 	}
 	
-	@BeforeSuite(alwaysRun=true)
-	public void parseData(){
-		
+	@BeforeSuite(alwaysRun = true)
+	public void parseData() throws IOException {
+
 		// Load Environment Properties
 		parseEnvironmentProperties();
+
 	}
 	
-	public void parseEnvironmentProperties() {
+	public void parseEnvironmentProperties() throws IOException {
 
 		// Create properties file object
 		Properties properties = new Properties();
 
-		try {
+		// Initialize input stream
+		InputStream inputStream;
 
-			// Initialize input stream
-			InputStream inputStream;
+		// Generate File name
+		String fileName = "care"+Variables.environmentName.toLowerCase() + ".properties";
 
-			// Generate File name
-			String fileName = Variables.environmentName.toLowerCase()
-					+ ".properties";
+		// Get file path
+		inputStream = new FileInputStream("./src/main/resources/care/properties/" + fileName);
 
-			// Get file path
-			inputStream = new FileInputStream(
-					"./src/main/resources/care/properties/" + fileName);
+		// Load property file
+		properties.load(inputStream);
 
-			// Load property file
-			properties.load(inputStream);
-
-		} catch (FileNotFoundException fileNotFoundException) {
-			fileNotFoundException.printStackTrace();
-		} catch (IOException ioException) {
-			ioException.printStackTrace();
-		}
-		
 		Variables.environmentProperties = properties;
 	}
 	

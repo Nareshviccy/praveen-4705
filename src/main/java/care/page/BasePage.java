@@ -206,10 +206,10 @@ public class BasePage {
 		
 		switch (env.toLowerCase()) {
 		case "uat1":
-			path = path+"www."+env.toLowerCase()+"carezen.net";
+			path = path+"www."+env.toLowerCase()+".carezen.net";
 			break;
 		case "uat2":
-			path = path+"www."+env.toLowerCase()+"carezen.net";
+			path = path+"www."+env.toLowerCase()+".carezen.net";
 			break;
 
 		default:
@@ -227,6 +227,10 @@ public class BasePage {
   	  	return this.testURL;
 	}
 	
+	/**
+	 * Load Environment properties
+	 * @return	Return Property file object
+	 */
 	public Properties loadEnvironmentProperties() {
 		Properties properties = Variables.environmentProperties;
 		return properties;

@@ -5,11 +5,11 @@ import java.util.Properties;
 public class Variables {
 	
 	/** Environment to be tested */
-	public static final String environmentName 	= "env";
+	public static final String environmentName 	= "uat2";
 	/** Default Browser to choose */
-	public static final String browserName		= "Chrome";
+	public static final String browserName		= "Firefox";
 	/** Create environment properties file*/
-	public static Properties environmentProperties;
+	public static Properties environmentProperties = new Properties();
 	
 	/** SauceLabs User Name */
 	public static final String sauceUsername	= "";
