@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SuiteName" parallel="methods">
+    <test name="TestName" allow-return-values="true">
+        <classes>
+            <class name="com.test.login.TestScripts" />
+        </classes>
+    </test>
+</suite>
