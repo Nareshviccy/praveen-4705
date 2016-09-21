@@ -2,7 +2,7 @@
 <suite name="SuiteName" parallel="methods">
 	<test name="TestName" allow-return-values="true">
 		<classes>
-			<class name="com.test.login.TestScripts" />
+			<class name="com.test.login.TestScript" />
 		</classes>
 	</test>
 </suite>
