@@ -27,10 +27,10 @@ public class EmailTestReport {
 		// Email Properties
 		String hostName		= "smtp.office365.com";
 		String smtpPort		= "587";
-		String fromUser		= "durga.praveen@care.com";
+		String fromUser		= "";
 		String fromPassword	= "";
 		
-		String[] toEmails = { "durga.praveen@care.com" };
+		String[] toEmails = { "" };
 		
 		properties.put("mail.smtp.starttls.enable", "true");
 		properties.put("mail.smtp.host", hostName);
