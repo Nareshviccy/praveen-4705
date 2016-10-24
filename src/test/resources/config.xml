@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<!-- report theme -->
+		<!-- standard, dark -->
+		<theme>standard</theme>
+
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+
+		<!-- protocol for script and stylesheets -->
+		<!-- defaults to https -->
+		<protocol>https</protocol>
+
+		<!-- title of the document -->
+		<documentTitle>Care Automation Report Page</documentTitle>
+
+		<!-- report name - displayed at top-nav -->
+		<reportName>QA Automation Report</reportName>
+
+		<!-- report headline - displayed at top-nav, after reportHeadline -->
+		<reportHeadline></reportHeadline>
+
+		<!-- global date format override -->
+		<!-- defaults to yyyy-MM-dd -->
+		<dateFormat>dd-MM-yyyy</dateFormat>
+
+		<!-- global time format override -->
+		<!-- defaults to HH:mm:ss -->
+		<timeFormat>HH:mm:ss</timeFormat>
+
+		<!-- custom javascript -->
+		<scripts>
+      <![CDATA[
+        $(document).ready(function() {
+        
+        var link = document.createElement('link');
+   		link.type = 'image/x-icon';
+    	link.rel = 'shortcut icon';
+    	link.href = 'https://s.cdn-care.com/img/favicon.ico?v=160921';
+    	document.getElementsByTagName('head')[0].appendChild(link);
+          
+        });
+      ]]>
+		</scripts>
+
+		<!-- custom styles -->
+		<styles>
+      <![CDATA[
+        .nav-wrapper a { display: none;}
+        .report-name{padding-left: 0px;}
+        .hide-on-med-and-down li:nth-child(3){display: none;}
+        .logo{display: none;}
+      ]]>
+		</styles>
+	</configuration>
+</extentreports>

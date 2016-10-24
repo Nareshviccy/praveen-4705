@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SuiteName" parallel="methods">
-	<test name="TestName" allow-return-values="true">
+	<listeners>
+		<listener class-name="com.saucelabs.testng.SauceOnDemandTestListener"></listener>
+		<listener class-name="care.util.ExtentReportLisener"></listener>
+	</listeners>
+	<test name="TestName">
 		<classes>
-			<class name="com.test.login.TestScript" />
+			<class name="com.test.login.TestScripts"/>
 		</classes>
 	</test>
 </suite>

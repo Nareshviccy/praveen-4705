@@ -1,9 +1,5 @@
 package care.util;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -12,7 +8,6 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -113,10 +108,10 @@ public class Driver implements SauceOnDemandSessionIdProvider, SauceOnDemandAuth
     			if (Variables.browserName.equalsIgnoreCase("Firefox")) {
 				
         			// Create Firefox Profile
-        			FirefoxProfile firefoxProfile = new FirefoxProfile();
+//        			FirefoxProfile firefoxProfile = new FirefoxProfile();
         			
     				// Set driver with profile
-    				Driver.driver.set(new FirefoxDriver(firefoxProfile));
+    				Driver.driver.set(new FirefoxDriver());
     				
 				}else if (Variables.browserName.equalsIgnoreCase("Chrome")) {
 					

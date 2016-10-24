@@ -3,14 +3,14 @@ package care.page;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
+import java.util.Random;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
-import com.relevantcodes.extentreports.ExtentTest;
 
 import care.util.Driver;
 import care.variables.Variables;
@@ -20,7 +20,7 @@ public class BasePage {
 	/** Driver Reference */
 	protected Driver driver;
 	
-	private ExtentTest testScript;
+//	private ExtentTest testScript;
 	
 	 /** URL of the env being tested */
 	 private URL testURL;
@@ -235,12 +235,54 @@ public class BasePage {
 		Properties properties = Variables.environmentProperties;
 		return properties;
 	}
-
-	public ExtentTest getTestScript() {
-		return testScript;
+	
+    /**
+     * Generate an email based on current UNIX timestamp
+     * @return	Returns the generated email
+     */
+    public String generateEmail(String baseString) {
+    	//Create Random object
+    	Random r = new Random();
+    	//Returns randomly generated email id
+    	return baseString + driver.getEnvironment().toLowerCase() + Integer.toString(r.nextInt(32000)) + Integer.toString(r.nextInt(999)) + "@care.com";
+    }
+    
+    /**
+     * Generate Random String
+     * @param length	Length of the string
+     * @return	message
+     */
+	public String randomStringOfLength(int length) {
+		String message = null;
+		for (int i = 0; i <= length; i++) {
+			//Generates a random string of given length
+			message = RandomStringUtils.randomAlphanumeric(i);
+		}
+		//Returns a random sting
+		return message;
+	}
+	
+    /**
+     * Generate Random Number
+     * @param length	Length of the string
+     * @return	message
+     */	
+	public String randomNumberOfLength(int length) {
+		String number = null;
+		for (int i = 0; i <= length; i++) {
+			//Generates a random string of given length
+			number = RandomStringUtils.randomNumeric(i);
+		}
+		
+		//Returns a random sting
+		return number;
 	}
 
-	public void setTestScript(ExtentTest testScript) {
-		this.testScript = testScript;
-	}
+//	public ExtentTest getTestScript() {
+//		return testScript;
+//	}
+//
+//	public void setTestScript(ExtentTest testScript) {
+//		this.testScript = testScript;
+//	}
 }

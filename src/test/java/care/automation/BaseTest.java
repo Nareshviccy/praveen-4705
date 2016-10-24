@@ -16,6 +16,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import care.util.Driver;
+import care.util.EmailTestReport;
 import care.util.ReportGenerator;
 import care.util.Screenshot;
 import care.variables.Variables;
@@ -40,9 +41,6 @@ public class BaseTest {
 	public void initializeDriver(ITestContext context, Method m, Boolean isLocal, Boolean isMobile) throws MalformedURLException {
 		// Set local flag
 		this.localFlag = isLocal;
-		
-		// Create Extent Report
-		ReportGenerator.getTest(m.getName(), "This is a simple test from complex factory");
 		
 		// Initialize driver
 		this.d = new Driver(m.getName(), context.getName(), isLocal, isMobile);
@@ -106,17 +104,20 @@ public class BaseTest {
 		}
 		
 		if (localFlag) {
-			if (!result.isSuccess()) {
-				ReportGenerator.stepInfo("Test Failed");
-			}else {
-				ReportGenerator.stepPassed("Test Passed");
-			}
+//			if (!result.isSuccess()) {
+//				ReportGenerator.stepInfo("Test Failed");
+//			}else {
+//				ReportGenerator.stepPassed("Test Passed");
+//			}
 			// Take screenshot
-			Screenshot.GetScreenshot("./test-output/screenshots/", result.getName(), d.getDriver());
+			Screenshot.GetScreenshot("./test-output/", result.getName(), d.getDriver());
 			
 			// Close Test
-			ReportGenerator.closeTest(m.getName());
+//			ReportGenerator.closeTest(m.getName());
 		}
+		
+		// Send report
+		EmailTestReport.sendTestReport();
 		
 		// Close the driver
 		d.getDriver().quit();
@@ -127,8 +128,8 @@ public class BaseTest {
 	 * You an have another afterSuite as well in the derived class and this one
 	 * will be called in the end making it the last method to be called in test exe
 	 */
-	@AfterSuite
-	public void closeReport() {
-		ReportGenerator.closeReport();
-	}
+//	@AfterSuite
+//	public void closeReport() {
+//		ReportGenerator.closeReport();
+//	}
 }

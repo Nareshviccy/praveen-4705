@@ -2,6 +2,8 @@ package care.variables;
 
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+
 public class Variables {
 	
 	/** Environment to be tested */
@@ -27,5 +29,28 @@ public class Variables {
 	public static final String sauceBrowser				= "Firefox";
 	/** Default Browser Version to choose for SauceLabs when nothing is specified */
 	public static final String sauceBrowserVersion		= "35";
+	
+	/*
+	 * General Information
+	 */
+	
+	public static final String gen_Password				= "letmein1";
+	
+	/*
+	 * Home Page Elements
+	 */
+	
+	public static final By homePage_link_JoinNow		= By.cssSelector("a.joinNowLink");
+	
+	/* **************************
+	 * Enrollment Page Elements
+	 * **************************/
+	
+	public static final By enrollmentPage_tb_FirstName			= By.cssSelector("input#firstName");
+	public static final By enrollmentPage_tb_LastName			= By.cssSelector("input#lastName");
+	public static final By enrollmentPage_tb_Address			= By.cssSelector("input#addressLine1");
+	public static final By enrollmentPage_tb_Email				= By.cssSelector("input#email");
+	public static final By enrollmentPage_tb_Password			= By.cssSelector("input#password");
+	public static final By enrollmentPage_btn_Join				= By.cssSelector("input#submitButton");
 
 }

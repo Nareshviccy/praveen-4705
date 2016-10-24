@@ -9,7 +9,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import care.automation.BaseTest;
+import care.page.desktop.EnrollmentPage;
 import care.page.desktop.HomePage;
+import care.util.EmailTestReport;
 
 public class TestScripts extends BaseTest {
 	
@@ -19,17 +21,12 @@ public class TestScripts extends BaseTest {
 	}
 	
 	@Test
-	public void testCase1() throws IOException{
+	public void seekerEnrollment() throws IOException{
+		// Open Home Page
 		HomePage homePage = new HomePage(d);
-	}
-	
-	@Test
-	public void testCase2(){
-		HomePage homePage = new HomePage(d);
-	}
-	
-	@Test
-	public void testCase3(){
-		HomePage homePage = new HomePage(d);
+//		// Navigate to Enrollment Page
+//		EnrollmentPage enrollmentPage = homePage.navigateToEnrollmentPage();
+//		// Register
+//		enrollmentPage.completeRegistration();
 	}
 }

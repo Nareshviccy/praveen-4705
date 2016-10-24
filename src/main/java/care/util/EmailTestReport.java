@@ -25,10 +25,12 @@ public class EmailTestReport {
 		Properties properties = System.getProperties();
 		
 		// Email Properties
-		String hostName		= "";
-		String smtpPort		= "";
-		String fromUser		= "";
-		String fromPassword	= "";
+		String hostName		= "smtp.office365.com";
+		String smtpPort		= "587";
+		String fromUser		= "durga.praveen@care.com";
+		String fromPassword	= "Nani@4705";
+		
+		String[] toEmails = { "durga.praveen@care.com" };
 		
 		properties.put("mail.smtp.starttls.enable", "true");
 		properties.put("mail.smtp.host", hostName);
@@ -48,14 +50,16 @@ public class EmailTestReport {
 			// Set from address
 			message.setFrom(new InternetAddress(fromUser));
 			
+			message.addRecipient(Message.RecipientType.TO,new InternetAddress(toEmails[0]));
+			
 			// Set Subject
-			message.setSubject("");
+			message.setSubject("Automation Report");
 			
 			// Set Date
 			message.setSentDate(new Date());
 			
 			// Set Content
-			message.setContent("", "text/html; charset=utf-8");
+			message.setContent("Test Message", "text/html; charset=utf-8");
 			
 			// Set Body Part
 			BodyPart bodyPart = new MimeBodyPart();
@@ -69,7 +73,8 @@ public class EmailTestReport {
 			bodyPart = new MimeBodyPart();
 			
 			//Set path to the HTML report file 
-			String filename = System.getProperty("user.dir")+"\\test.html";
+			System.out.println(System.getProperty("user.dir"));
+			String filename = "./test-output/SuiteName.html";
 			 
 			//Create data source to attach the file in mail
 			DataSource source = new FileDataSource(filename);
