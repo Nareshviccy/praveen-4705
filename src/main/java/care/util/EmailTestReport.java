@@ -28,7 +28,7 @@ public class EmailTestReport {
 		String hostName		= "smtp.office365.com";
 		String smtpPort		= "587";
 		String fromUser		= "durga.praveen@care.com";
-		String fromPassword	= "Nani@4705";
+		String fromPassword	= "";
 		
 		String[] toEmails = { "durga.praveen@care.com" };
 		
