@@ -25,8 +25,8 @@ public class EmailTestReport {
 		Properties properties = System.getProperties();
 		
 		// Email Properties
-		String hostName		= "smtp.office365.com";
-		String smtpPort		= "587";
+		String hostName		= "";
+		String smtpPort		= "";
 		String fromUser		= "";
 		String fromPassword	= "";
 		

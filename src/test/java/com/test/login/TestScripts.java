@@ -17,16 +17,16 @@ public class TestScripts extends BaseTest {
 	
 	@BeforeMethod(alwaysRun=true)
 	public void initializeDriver(ITestContext context, Method m) throws MalformedURLException {
-		super.initializeDriver(context, m, true, false);
+		super.initializeDriver(context, m, false, false);
 	}
 	
 	@Test
 	public void seekerEnrollment() throws IOException{
 		// Open Home Page
 		HomePage homePage = new HomePage(d);
-//		// Navigate to Enrollment Page
-//		EnrollmentPage enrollmentPage = homePage.navigateToEnrollmentPage();
-//		// Register
-//		enrollmentPage.completeRegistration();
+		// Navigate to Enrollment Page
+		EnrollmentPage enrollmentPage = homePage.navigateToEnrollmentPage();
+		// Register
+		enrollmentPage.completeRegistration();
 	}
 }

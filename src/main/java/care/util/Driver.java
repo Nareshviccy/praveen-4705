@@ -127,6 +127,10 @@ public class Driver implements SauceOnDemandSessionIdProvider, SauceOnDemandAuth
 			
 		}else {
 			
+			if (!isMobileWeb) {
+				this.deviceType = "Desktop";
+			}
+			
 			// Set user info for Saucelabs
 			if (System.getenv("SAUCE_USER_NAME") == null) sauceUsername = Variables.sauceUsername;
 		   	else sauceUsername = System.getenv("SAUCE_USER_NAME");

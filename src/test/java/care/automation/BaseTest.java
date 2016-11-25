@@ -12,12 +12,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import care.util.Driver;
 import care.util.EmailTestReport;
-import care.util.ReportGenerator;
 import care.util.Screenshot;
 import care.variables.Variables;
 
@@ -117,19 +115,9 @@ public class BaseTest {
 		}
 		
 		// Send report
-		EmailTestReport.sendTestReport();
+//		EmailTestReport.sendTestReport();
 		
 		// Close the driver
 		d.getDriver().quit();
 	}
-	
-	/**
-	 * After suite will be responsible to close the report properly at the end
-	 * You an have another afterSuite as well in the derived class and this one
-	 * will be called in the end making it the last method to be called in test exe
-	 */
-//	@AfterSuite
-//	public void closeReport() {
-//		ReportGenerator.closeReport();
-//	}
 }

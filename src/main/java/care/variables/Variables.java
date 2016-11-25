@@ -14,9 +14,9 @@ public class Variables {
 	public static Properties environmentProperties = new Properties();
 	
 	/** SauceLabs User Name */
-	public static final String sauceUsername	= "";
+	public static final String sauceUsername	= "Lavanya";
 	/** SauceLabs Access Key */
-	public static final String sauceAccessKey	= "";
+	public static final String sauceAccessKey	= "d617f080-4d9f-47bc-b943-67e5379da209";
 	
 	/** Sauce's supported browser resolutions
 	 *  Verify here the supported resolutions: 
@@ -28,7 +28,7 @@ public class Variables {
 	/** Default Browser to choose for SauceLabs when nothing is specified */
 	public static final String sauceBrowser				= "Firefox";
 	/** Default Browser Version to choose for SauceLabs when nothing is specified */
-	public static final String sauceBrowserVersion		= "35";
+	public static final String sauceBrowserVersion		= "46.0";
 	
 	/*
 	 * General Information
